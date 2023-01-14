@@ -1,0 +1,7 @@
+FINAL_PRICE = "final_price"
+DATE_END = "date_end"
+DATE_START = "date_start"
+DATE_FORMAT = "%m-%d-%Y"
+ISO_STANDARD = "iso-8601"
+PROPERTY = "property"
+PRICE_MODIFIER = "price_modifier"

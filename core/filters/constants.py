@@ -1,0 +1,5 @@
+ID_LOOKUP_EXPR = ['in', 'exact']
+STRING_LOOKUP_EXPR = ['icontains', 'exact']
+QTY_LOOKUP_EXPR = ['lt', 'gt', 'gte', 'lte', 'exact']
+EXACT_EXPR = ['exact']
+STRING_ONE_OF_EXPR = ['in', 'exact']

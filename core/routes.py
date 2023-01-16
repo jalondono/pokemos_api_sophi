@@ -5,7 +5,7 @@ from rest_framework import routers
 from core.views import (
     BookingViewSet,
     PropertyViewSet,
-    PricingRuleViewSet
+    PricingRuleViewSet,
 )
 
 

@@ -29,7 +29,7 @@ urlpatterns = [
 
     path('api/token/', jwt_views.TokenObtainPairView.as_view(), name='token_obtain_pair'),
     path('api/token/refresh/', jwt_views.TokenRefreshView.as_view(), name='token_refresh'),
-    path('register/', RegistrationView.as_view(), name='register'),
+    path('api/register/', RegistrationView.as_view(), name='register'),
 
     # Schema Generation
     path('', schema_view.with_ui('swagger', cache_timeout=0), name='schema-swagger-ui'),

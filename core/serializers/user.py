@@ -4,7 +4,6 @@ from core.utils import check_password_complexity, check_email_format
 
 
 class RegistrationSerializer(serializers.ModelSerializer):
-
     email = serializers.EmailField(required=True)
     password = serializers.CharField(required=True, write_only=True)
 

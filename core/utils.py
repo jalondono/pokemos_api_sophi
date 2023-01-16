@@ -10,7 +10,7 @@ def check_password_complexity(user_password: str) -> bool:
         -  upper case (A to Z)
         -  special char (e.g. !@#$%^&*()_+-=.)
     """
-    pat = "^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[*.!@#$%^&(){}[\]:;<>,.?/~_+\-=|]).{8,128}$"
+    pat = "^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[*.!@#$%^&(){}[\]:;<>,.?/~_+\-=|]).{10,128}$"
     return bool(re.match(pat, user_password))
 
 

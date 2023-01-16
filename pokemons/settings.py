@@ -1,4 +1,4 @@
-import datetime
+from datetime import timedelta
 import os
 from pathlib import Path
 
@@ -9,7 +9,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.environ.get("SECRET_KEY", 'django-insecure-t9ju5m7fn%_$z$9@wz6yxrk5c3f-26ro=tmz#1nyrw-5%+mddb'),
+SECRET_KEY = os.environ.get("SECRET_KEY", 'django-insecure-t9ju5m7fn%_$z$9@wz6yxrk5c3f-26ro=tmz#1nyrw-5%+mddb')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
@@ -97,6 +97,17 @@ TEMPLATES = [
         },
     },
 ]
+
+SIMPLE_JWT = {
+    'ACCESS_TOKEN_LIFETIME': timedelta(minutes=20),
+    'REFRESH_TOKEN_LIFETIME': timedelta(days=1),
+    'AUTH_HEADER_TYPES': ('Bearer',),
+}
+
+
+JWT_SECRET_KEY = os.environ.get('JWT_SECRET_KEY')
+
+AUTH_USER_MODEL = 'core.Account'
 
 WSGI_APPLICATION = 'pokemons.wsgi.application'
 

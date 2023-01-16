@@ -20,7 +20,6 @@ class Account(AbstractBaseUser):
     email = models.EmailField(verbose_name="email", max_length=60, unique=True)
 
     USERNAME_FIELD = 'email'
-    REQUIRED_FIELDS = ['email']
 
     objects = MyAccountManager()
 

@@ -1,12 +1,12 @@
 from core.views.user import RegistrationView
 
+from rest_framework_simplejwt.views import TokenRefreshView, TokenObtainPairView
 from django.contrib import admin
 from django.urls import path
 from django.conf.urls import include
 from drf_yasg import openapi
 from drf_yasg.views import get_schema_view
 from rest_framework import permissions
-from rest_framework_simplejwt import views as jwt_views
 
 
 schema_view = get_schema_view(
@@ -23,12 +23,12 @@ schema_view = get_schema_view(
 )
 
 urlpatterns = [
-    path(r'api-auth/', include('rest_framework.urls', namespace='rest_framework')),
     path(r'admin/', admin.site.urls),
     path(r'api/v1/', include('core.urls')),
 
-    path('api/token/', jwt_views.TokenObtainPairView.as_view(), name='token_obtain_pair'),
-    path('api/token/refresh/', jwt_views.TokenRefreshView.as_view(), name='token_refresh'),
+    path("api/auth/token/", TokenObtainPairView.as_view(), name="token_obtain_pair"),
+    path("api/auth/token/refresh/", TokenRefreshView.as_view(), name="token_refresh"),
+
     path('api/register/', RegistrationView.as_view(), name='register'),
 
     # Schema Generation

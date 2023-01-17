@@ -2,7 +2,7 @@ from rest_framework.permissions import AllowAny, IsAuthenticated
 from rest_framework import generics
 
 
-from core.serializers.user import RegistrationSerializer
+from core.serializers import RegistrationSerializer
 
 
 class RegistrationView(generics.CreateAPIView):

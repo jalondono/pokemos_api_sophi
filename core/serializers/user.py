@@ -9,7 +9,7 @@ class RegistrationSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Account
-        fields = ['email', 'password']
+        exclude = ('created_at', 'updated_at')
 
     def create(self, validated_data):
 

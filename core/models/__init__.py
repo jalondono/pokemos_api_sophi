@@ -1,4 +1,3 @@
-from .booking import Booking
-from .princing_rule import PricingRule
-from .property import Property
+from .pokemon import Pokemon
 from .user import Account
+from .enum_pokemon_type import EnumPokemonType

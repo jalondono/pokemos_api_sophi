@@ -1,3 +1,3 @@
-from .booking import BookingSerializer
-from .property import PropertySerializer
-from .pricing_rule import PricingRuleSerializer
+from .user import RegistrationSerializer
+from .pokemon import PokemonSerializer
+from .enum_pokemon_type import EnumPokemonTypeSerializer

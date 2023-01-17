@@ -1,4 +1,5 @@
 from django.db import models
+from .base_model import BaseModel
 from django.contrib.auth.models import AbstractBaseUser, BaseUserManager
 
 
@@ -16,7 +17,7 @@ class MyAccountManager(BaseUserManager):
         return user
 
 
-class Account(AbstractBaseUser):
+class Account(AbstractBaseUser, BaseModel):
     email = models.EmailField(verbose_name="email", max_length=60, unique=True)
 
     USERNAME_FIELD = 'email'

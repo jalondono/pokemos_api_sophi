@@ -1,4 +1,4 @@
-django-filter
+django-filter~=22.1
 requests==2.24.0
 psycopg2
 python-dateutil==2.8.1
@@ -11,3 +11,4 @@ django-cors-headers==3.7.0
 django-rest-swagger==2.2.0
 djangorestframework==3.13.1
 djangorestframework-simplejwt==4.6.0
+Faker~=16.6.0

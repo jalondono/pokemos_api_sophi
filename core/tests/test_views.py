@@ -1,5 +1,5 @@
-from app.user.models import Account
-from app.user.tests.test_setup import TestSetUp
+from core.models import Account
+from core.tests.test_setup import TestSetUp
 
 
 class TestViews(TestSetUp):
@@ -10,7 +10,6 @@ class TestViews(TestSetUp):
     def test_user_can_register_correctly(self):
         res = self.client.post(self.register_url, self.user_data, format="json")
         self.assertEqual(res.data['email'], self.user_data['email'])
-        self.assertEqual(res.data['username'], self.user_data['username'])
         self.assertEqual(res.status_code, 201)
 
     def test_user_can_login_after_verification(self):

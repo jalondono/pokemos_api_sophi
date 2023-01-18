@@ -7,7 +7,7 @@ from .enum_pokemon_type import EnumPokemonTypeSerializer
 
 
 class PokemonSerializer(NestedModelSerializer, serializers.ModelSerializer):
-    user = NestedField(RegistrationSerializer, accept_pk_only=True)
+    user = NestedField(RegistrationSerializer, accept_pk_only=True, allow_null=True)
     pokemon_type = NestedField(EnumPokemonTypeSerializer, accept_pk_only=True)
     attack = serializers.FloatField(min_value=0.0)
     defense = serializers.FloatField(min_value=0.0)

@@ -1,3 +1,4 @@
+from core.views import random_number_view
 from core.views.user import RegistrationView
 
 from rest_framework_simplejwt.views import TokenRefreshView, TokenObtainPairView
@@ -30,6 +31,7 @@ urlpatterns = [
     path("api/auth/token/refresh/", TokenRefreshView.as_view(), name="token_refresh"),
 
     path('api/register/', RegistrationView.as_view(), name='register'),
+    path('api/random_number/', random_number_view, name='random_number'),
 
     # Schema Generation
     path('', schema_view.with_ui('swagger', cache_timeout=0), name='schema-swagger-ui'),

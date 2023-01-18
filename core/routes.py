@@ -4,7 +4,7 @@ from rest_framework import routers
 
 from core.views import (
     PokemonViewSet,
-    EnumPokemonTypeViewSet
+    EnumPokemonTypeViewSet, ProfileViewSet
 )
 
 
@@ -16,6 +16,7 @@ class ApiRouter:
     @classmethod
     def get(cls):
         router = routers.SimpleRouter()
+        router.register(r'me', ProfileViewSet, basename='profile')
         router.register(r'pokemon_type', EnumPokemonTypeViewSet)
         router.register(r'pokemon', PokemonViewSet)
 

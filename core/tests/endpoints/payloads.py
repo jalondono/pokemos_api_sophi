@@ -1,3 +1,14 @@
+
+CREATE_POKEMON_1 = {
+        "user": None,
+        "pokemon_type": None,
+        "attack": 100,
+        "defense": 100,
+        "velocity": 100,
+        "resistance": 100,
+        "is_public": True
+}
+
 # CASE 1 PAYLOADS
 
 CREATE_PROPERTY_CASE_1_PAYLOAD = {

@@ -7,7 +7,8 @@ faker = Faker('en-US')
 
 
 def create_random_pokemon_type():
-    return EnumPokemonType.objects.get_or_create(name=faker.name)
+    pokemon_type, is_created = EnumPokemonType.objects.get_or_create(name=faker.name)
+    return pokemon_type
 
 
 def create_random_pokemon(user: Account = None, is_public: bool = True,
@@ -53,6 +54,6 @@ def create_random_user() -> bool:
     """
     email_name = faker.name().replace(" ", "")
     email = f"{email_name}@hotmail.com"
-    password = "bMvnu2?!20y."
-    return Account.objects.get_or_create(email, defaults={password})[1]
+    args = {"password": "bMvnu2?!20y."}
+    return Account.objects.get_or_create(email=email, defaults=args)[1]
 

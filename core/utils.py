@@ -5,7 +5,7 @@ def check_password_complexity(user_password: str) -> bool:
     """
     Check password complexity and return True if the password is strong enough
     Rules:
-        -  at least 8 chars long
+        -  at least 10 chars long
         -  lower case (a to z)
         -  upper case (A to Z)
         -  special char (e.g. !@#$%^&*()_+-=.)

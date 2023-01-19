@@ -13,10 +13,21 @@ class PokemonSerializer(NestedModelSerializer, serializers.ModelSerializer):
     defense = serializers.FloatField(min_value=0.0)
     velocity = serializers.FloatField(min_value=0.0)
     resistance = serializers.FloatField(min_value=0.0)
+    is_public = serializers.BooleanField(default=True, )
 
     class Meta:
         model = Pokemon
         exclude = ('created_at', 'updated_at')
+
+    def create(self, validated_data):
+        """
+        Validate if user is private the user can't be null
+        """
+        is_public = validated_data["is_public"]
+        user = validated_data["user"]
+        if is_public is False and user is None:
+            raise serializers.ValidationError("A private pokemon should have associate and user")
+        return super().create(validated_data)
 
     def update(self, instance, validated_data):
         """

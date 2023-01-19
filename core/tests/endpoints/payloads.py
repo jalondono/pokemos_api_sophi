@@ -1,5 +1,6 @@
 
 CREATE_POKEMON_1 = {
+        "name": "Chicorita",
         "user": None,
         "pokemon_type": None,
         "attack": 100,

@@ -55,5 +55,6 @@ def create_random_user() -> bool:
     email_name = faker.name().replace(" ", "")
     email = f"{email_name}@hotmail.com"
     args = {"password": "bMvnu2?!20y."}
-    return Account.objects.get_or_create(email=email, defaults=args)[1]
+    return Account.objects.get_or_create(email=email, defaults=args)
+
 

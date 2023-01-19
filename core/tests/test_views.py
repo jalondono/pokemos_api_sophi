@@ -1,5 +1,5 @@
-from core.models import Account
 from core.tests.test_setup import TestSetUp
+from core.models import Account
 
 
 class TestViews(TestSetUp):

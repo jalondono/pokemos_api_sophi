@@ -16,18 +16,18 @@ This project represents a Pokemon API which is used for publish and share Pokemo
 ## Endpoints
 
 ### Register and Authentication
-- `/api/register/` - Create User
-- `/api/v1/me/` - User Info
-- `/api/auth/token/` - Get Token
-- `/api/auth/token/refresh/` - Refresh Token
+- POST `/api/register/` - Create User
+- GET `/api/v1/me/` - User Info
+- POST`/api/auth/token/` - Get Token
+- POST `/api/auth/token/refresh/` - Refresh Token
 
 ### Pokemon CRUD
-- `/api/v1/pokemon/` - Read only pokemon types
-- `/api/v1/pokemon_type/` - CRUD operation on pokemons
+- GET `/api/v1/pokemon/` - Read only pokemon types
+- ALL Verbs`/api/v1/pokemon_type/` - CRUD operation on pokemons
 
 
 ### Get random number from external API
-- `/api/random_number/` - Get random number (public)
+- POST `/api/random_number/` - Get random number (public)
 
 ## Rules
 - The public Pokemons can't update/deleted unless the owner send the request
@@ -40,8 +40,18 @@ Authorization: "Bearer token..."
 ```
 
 ### Example:
-- Payload Example:
+- Payload Registration:
+Notice the user could be optional, but the pokemon type is a must, so you have to get the pokemon_type_id from pokemon type endpoint
+<img width="655" alt="image" src="https://user-images.githubusercontent.com/51680387/213747682-2c42f510-8acc-45eb-ab05-47a76b1e971b.png">
+
+- Payload Get Token:
+Notice the user could be optional, but the pokemon type is a must, so you have to get the pokemon_type_id from pokemon type endpoint
+<img width="1086" alt="image" src="https://user-images.githubusercontent.com/51680387/213747878-f05c88de-2fd9-4f61-bacd-9ddef0e06168.png">
+
+- Payload Example Pokemon Creation:
 Notice the user could be optional, but the pokemon type is a must, so you have to get the pokemon_type_id from pokemon type endpoint
 <img align="center" src="https://i.imgur.com/4d8stlA.png" height="50%" width="50%"/>
 
+- Get random Number:
+Notice the user could be optional, but the pokemon type is a must, so you have to get the pokemon_type_id from pokemon type endpoint
 

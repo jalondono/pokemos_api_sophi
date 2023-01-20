@@ -41,11 +41,9 @@ Authorization: "Bearer token..."
 
 ### Example:
 - Payload Registration:
-Notice the user could be optional, but the pokemon type is a must, so you have to get the pokemon_type_id from pokemon type endpoint
 <img width="655" alt="image" src="https://user-images.githubusercontent.com/51680387/213747682-2c42f510-8acc-45eb-ab05-47a76b1e971b.png">
 
 - Payload Get Token:
-Notice the user could be optional, but the pokemon type is a must, so you have to get the pokemon_type_id from pokemon type endpoint
 <img width="1086" alt="image" src="https://user-images.githubusercontent.com/51680387/213747878-f05c88de-2fd9-4f61-bacd-9ddef0e06168.png">
 
 - Payload Example Pokemon Creation:
@@ -53,5 +51,4 @@ Notice the user could be optional, but the pokemon type is a must, so you have t
 <img align="center" src="https://i.imgur.com/4d8stlA.png" height="50%" width="50%"/>
 
 - Get random Number:
-Notice the user could be optional, but the pokemon type is a must, so you have to get the pokemon_type_id from pokemon type endpoint
 

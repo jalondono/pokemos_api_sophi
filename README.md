@@ -27,7 +27,7 @@ This project represents a Pokemon API which is used for publish and share Pokemo
 
 
 ### Get random number from external API
-- POST `/api/random_number/` - Get random number (public)
+- GET `/api/random_number/?min=100&max=200` - Get random number (public)
 
 ## Rules
 - The public Pokemons can't update/deleted unless the owner send the request
@@ -39,16 +39,20 @@ This project represents a Pokemon API which is used for publish and share Pokemo
 Authorization: "Bearer token..."
 ```
 
-### Example:
-- Payload Registration:
+## Examples:
+### Payload Registration:
 <img width="655" alt="image" src="https://user-images.githubusercontent.com/51680387/213747682-2c42f510-8acc-45eb-ab05-47a76b1e971b.png">
 
-- Payload Get Token:
-<img width="1086" alt="image" src="https://user-images.githubusercontent.com/51680387/213747878-f05c88de-2fd9-4f61-bacd-9ddef0e06168.png">
+### Payload Get Token:
+- <img width="1086" alt="image" src="https://user-images.githubusercontent.com/51680387/213747878-f05c88de-2fd9-4f61-bacd-9ddef0e06168.png">
 
-- Payload Example Pokemon Creation:
-Notice the user could be optional, but the pokemon type is a must, so you have to get the pokemon_type_id from pokemon type endpoint
+### Fetching pokemon_type :
+<img width="1014" alt="image" src="https://user-images.githubusercontent.com/51680387/213776903-4c3f750d-1572-48a4-be71-7869731ca0f1.png">
+
+### Payload  Pokemon Creation:
+- Notice the user could be optional, but the pokemon type is a must, so you have to get the pokemon_type_id from pokemon type endpoint
 <img align="center" src="https://i.imgur.com/4d8stlA.png" height="50%" width="50%"/>
 
-- Get random Number:
-
+### Get random Number:
+- Notice the query params min and max should be passed
+<img width="933" alt="Screenshot 2023-01-20 at 1 17 21 PM" src="https://user-images.githubusercontent.com/51680387/213776385-731e44fa-b93d-402d-bfd4-926d13b3a542.png">

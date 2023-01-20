@@ -21,3 +21,6 @@ class Pokemon(BaseModel):
     defense: float = models.FloatField(default=0.0)
     resistance: float = models.FloatField(default=0.0)
     is_public: bool = models.BooleanField(default=False)
+
+    class Meta:
+        ordering = ["id"]

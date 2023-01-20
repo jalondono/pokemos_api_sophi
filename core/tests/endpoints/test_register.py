@@ -1,8 +1,7 @@
 from core.tests.test_setup import TestSetUp
-from core.models import Account
 
 
-class TestViews(TestSetUp):
+class TestRegisterViews(TestSetUp):
     def test_user_cannot_register_with_no_data(self):
         res = self.client.post(self.register_url)
         self.assertEqual(res.status_code, 400)
@@ -15,9 +14,5 @@ class TestViews(TestSetUp):
     def test_user_can_login_after_verification(self):
         response = self.client.post(
             self.register_url, self.user_data, format="json")
-        email = response.data['email']
-        user = Account.objects.get(email=email)
-        user.is_verified = True
-        user.save()
         res = self.client.post(self.login_url, self.user_data, format="json")
         self.assertEqual(res.status_code, 200)

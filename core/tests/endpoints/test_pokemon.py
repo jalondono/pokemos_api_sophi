@@ -1,7 +1,7 @@
 from core.tests.constants import REGISTER_URI, POKEMON_URI
 from .base import RESTTestCase
 from core.tests.endpoints.payloads import CREATE_POKEMON_1
-from core.models.utils import create_random_user, create_random_pokemon_type
+from core.models.utils import create_random_user, create_random_pokemon_type, create_random_pokemon
 from copy import deepcopy
 from rest_framework import status
 from rest_framework.test import APIClient
@@ -91,3 +91,38 @@ class PokemonTestCase(RESTTestCase):
         response = self.client.get(POKEMON_URI, content_type='application/json')
         # Since other user is logged can't see the whole list, only the public
         self.assertEqual(original_count, original_count)
+
+    def test_only_can_update_your_own_pokemons(self):
+        """
+        Test that and user only can update your own pokemons
+        """
+        public_pokemon = create_random_pokemon()[1]
+        self.client.force_authenticate(self.user)
+        payload = {"attack": 99}
+
+        response = self.client.patch(f"{POKEMON_URI}{public_pokemon.id}/", json.dumps(payload),
+                                     content_type='application/json')
+        self.assertEqual(response.status_code, status.HTTP_400_BAD_REQUEST)
+
+        public_pokemon.user = self.user
+        public_pokemon.save()
+
+        response = self.client.patch(f"{POKEMON_URI}{public_pokemon.id}/", json.dumps(payload),
+                                     content_type='application/json')
+        self.assertEqual(response.status_code, status.HTTP_200_OK)
+
+    def test_only_can_delete_your_own_pokemons(self):
+        """
+        Test that and user only can delete your own  pokemons
+        """
+        public_pokemon = create_random_pokemon()[1]
+        self.client.force_authenticate(self.user)
+
+        response = self.client.delete(f"{POKEMON_URI}{public_pokemon.id}/", content_type='application/json')
+        self.assertEqual(response.status_code, status.HTTP_400_BAD_REQUEST)
+
+        public_pokemon.user = self.user
+        public_pokemon.save()
+
+        response = self.client.delete(f"{POKEMON_URI}{public_pokemon.id}/", content_type='application/json')
+        self.assertEqual(response.status_code, status.HTTP_204_NO_CONTENT)

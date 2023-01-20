@@ -29,4 +29,18 @@ This project represents a Pokemon API which is used for publish and share Pokemo
 - `/api/random_number/` - Get random number (public)
 
 ## Rules
-- 
+- The public Pokemons can't update/deleted unless the owner send the request
+- A private pokemon should have associated always a user
+- Only the owners can update their pokemons
+
+## Note: Be sure you add the Authorization header as follows:
+```
+Authorization: "Bearer token..."
+```
+
+### Example:
+- Payload Example:
+Notice the user could be optional, but the pokemon type is a must, so you have to get the pokemon_type_id from pokemon type endpoint
+<img align="center" src="https://i.imgur.com/4d8stlA.png" height="50%" width="50%"/>
+
+

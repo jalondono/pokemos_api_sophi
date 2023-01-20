@@ -29,3 +29,5 @@ RUN chmod +x /start
 WORKDIR /app
 
 ENTRYPOINT ["/entrypoint"]
+
+EXPOSE 8000

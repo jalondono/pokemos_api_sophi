@@ -10,7 +10,8 @@ This project represents a Pokemon API which is used for publish and share Pokemo
 # Instructions
 - Build the docker image using the command `docker-compose build`
 - Run the docker image using the command `docker-compose up -d`
-- To run the tests use the command ` docker exec -it pokemos_api_sophi_web  python manage.py test core`
+  - To run the tests use the command `docker exec -it pokemos_api_sophi_web_1 python manage.py test core`
+
 
 ## Endpoints
 
